@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "2f7de85c-71c2-4cae-8b01-d9d0b3ea666d",
+		"name": "Benefit Illustrations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8051739"
+	},
+	"item": [
+		{
+			"name": "Benefit Illustrations",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"jayant@test.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"email\": \"jayant@test.com\",\n       \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calculate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"dob\":\"1999-12-12\",\"sumAssured\":1200000,\"modalPremium\":80000,\"pt\":18,\"ppt\":10}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/policy/calculate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"policy",
+								"calculate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

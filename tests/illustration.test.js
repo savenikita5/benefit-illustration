@@ -60,19 +60,15 @@ describe("DOB / Age Calculation – ACB Logic", () => {
   });
 
   test("Age should reduce by 1 if birthday has not yet occurred this year", () => {
-    const today = new Date();
+  const today = new Date();
+  const year = today.getFullYear() - 25;
 
-    const dobDate = new Date(
-      today.getFullYear() - 25,
-      11, // December
-      31
-    );
+  const dob = `${year}-12-31`; // birthday still in future
 
-    const dob = dobDate.toISOString().split("T")[0];
-    const age = calculateAge(dob);
-
-    expect(age).toBe(24);
-  });
+  const age = calculateAge(dob);
+  
+  expect(age).toBe(24);
+});
 
 });
 
